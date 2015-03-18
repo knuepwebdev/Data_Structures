@@ -1,13 +1,24 @@
 var chai = require('chai')
 var expect = chai.expect;
 var $ = require('jquery');
+var StackView = require('ui/stack-view');
 
-StackView = require('ui/stack-view');
+var renderStackView = function() {
+  $element = $('#spec-dom');
+  StackView.show($element);
+};
+
+var unRenderStackView = function() {
+  $('#spec-dom').html('');
+};
 
 describe('Stack UI', function() {
   beforeEach(function() {
-    $element = $('#spec-dom');
-    StackView.show($element);
+    renderStackView();
+  });
+
+  afterEach(function() {
+    unRenderStackView();
   });
 
   it('Exists', function() {
