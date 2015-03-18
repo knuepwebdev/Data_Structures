@@ -1,0 +1,1 @@
+require('./src/ui/stack-view-spec');
