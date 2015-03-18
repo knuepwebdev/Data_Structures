@@ -1,0 +1,28 @@
+{
+  "name": "Data_Structures",
+  "version": "0.0.0",
+  "description": "Common Data Structures implemented in JavaScript",
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "2.1.x",
+    "chai": "^2.1.0",
+    "jasmine": "^2.2.1",
+    "mocha-loader": "^0.7.1",
+    "webpack": "^1.7.3"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "open web/index.html",
+    "test": "open spec/runner.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/knuepwebdev/Data_Structures.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knuepwebdev/Data_Structures/issues"
+  },
+  "homepage": "https://github.com/knuepwebdev/Data_Structures"
+}
