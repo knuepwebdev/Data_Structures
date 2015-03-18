@@ -2,22 +2,29 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+  context: __dirname,
+  node: {
+    __filename: true
+  },
   entry: {
     main: "./src/main.js",
     spec: "mocha!./spec/index.js"
   },
   output: {
     path: path.join(__dirname, "assets"),
+    publicPath: "assets/", // relative path for github pages
     filename: "[name].js"
   },
     resolve: {
     extensions: [
       "", 
-      ".js",
-      ".coffee",
+      ".html",
+      ".jade",
+      ".css",
       ".scss",
       ".less",
-      ".jade",
+      ".js",
+      ".coffee",
       ".json"
     ],
     root: [
@@ -31,6 +38,7 @@ module.exports = {
   },
   module: {
     loaders: [
+      { test: /\.html$/, loader: "html" },
       { test: /\.coffee$/, loader: "coffee-loader" },
       { test: /\.css$/, loader: "style!css" },
       { test: /\.html.jade$/, loader: "jade-html" },

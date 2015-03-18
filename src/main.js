@@ -1,5 +1,3 @@
 var App = require('./app');
 
-$(document).ready(function() {
-  App.initialize();
-});
+$(document).ready(App.initialize);

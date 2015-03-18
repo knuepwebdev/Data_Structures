@@ -1,8 +1,7 @@
-var jade = require('jade');
-var html = jade.render("<input class='new-element' />");
+var stackUI = require('./stack-view-template');
 
 var show = function(element) {
-  element.html(html);
+  element.html(stackUI);
 };
 
 var StackView = {
