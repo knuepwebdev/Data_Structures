@@ -1,4 +1,6 @@
-var chai = require('chai')
+var chai = require('chai');
+var spies = require('chai-spies');
+chai.use(spies);
 var expect = chai.expect;
 var $ = require('jquery');
 var StackView = require('ui/stack-view');
@@ -27,5 +29,26 @@ describe('Stack UI', function() {
 
   it('has an input field for new elements', function() {
     expect($('.new-element').length).to.equal(1);
+  });
+
+  describe('button click: add', function() {
+    var handleClickEvent;
+    var handler;
+
+    describe('when a valid element is entered', function() {
+      beforeEach(function() {
+        handleClickEvent = function(event) {};
+        handler = chai.spy(handleClickEvent);
+      });
+
+      it('adds the new element to the stack', function() {
+
+      });
+
+      // it('calls the appropriate handler', function() {
+      //   expect(handler).to.have.been.called.once;
+      // });      
+      // it('clears the input text box'...)
+    });
   });
 });
