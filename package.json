@@ -6,6 +6,8 @@
     "html-loader": "^0.2.3"
   },
   "devDependencies": {
+    "jade": "^1.9.2",
+    "jade-loader": "0.7.x",
     "jade-html-loader": "0.0.2",
     "jasmine": "^2.2.1",
     "chai": "^2.1.0",
