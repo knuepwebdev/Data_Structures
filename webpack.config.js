@@ -42,7 +42,7 @@ module.exports = {
       { test: /\.coffee$/, loader: "coffee-loader" },
       { test: /\.css$/, loader: "style!css" },
       { test: /\.html.jade$/, loader: "jade-html" },
-      { test: /\.jade$/, loader: "jade" },
+      { test: /\.jade$/,   loader: "jade?self" },
       { test: /\.less$/, loader: "style!css!less" },
       { test: /\.sass$/, loader: "style!css!sass" },
       { test: /\.scss$/, loader: "style!css!sass" },

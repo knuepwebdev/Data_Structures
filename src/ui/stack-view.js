@@ -26,8 +26,10 @@ var hiAddElement = function(event) {
 };
 
 var saveElement = function(element) {
+  var template = require('./list-item');
+  var listItem = template(newElement = element);
   stack.push(element);
-  $listOfElements.append('<li>' + element + '</li>');
+  $listOfElements.append(listItem);
 };
 
 var renderElements = function() {
