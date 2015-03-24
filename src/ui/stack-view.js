@@ -3,6 +3,7 @@ var Stack = require('../stores/stack');
 var $ = require('jquery');
 var $newElement;
 var $addElementButton;
+var $popButton;
 var $listOfElements;
 
 var show = function(element) {
@@ -15,10 +16,12 @@ var bindUI = function() {
   $newElement = $('.new-element');
   $addElementButton = $('.add-element');
   $listOfElements = $('.list-of-elements');
+  $popButton = $('.pop');
 };
 
 var registerHandlers = function() {
   $addElementButton.click(hiAddElement);
+  $popButton.click(hiPopElement);
 };
 
 var hiAddElement = function(event) {
@@ -26,10 +29,14 @@ var hiAddElement = function(event) {
   saveElement(newElement);
 };
 
+var hiPopElement = function(event) {
+  Stack.pop();
+  render(Stack.load());
+};
+
 var saveElement = function(element) {
   Stack.push(element);
-  var stack = Stack.load();
-  render(stack);
+  render(Stack.load());
 };
 
 var render = function(stack) {

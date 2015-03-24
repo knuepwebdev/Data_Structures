@@ -8,6 +8,10 @@ function load() {
   return reverseElements();
 };
 
+function pop() {
+  elements.pop();
+};
+
 function reverseElements() {
   var stack = [];
   for (var i = elements.length - 1; i >= 0; i--) {
@@ -18,9 +22,9 @@ function reverseElements() {
 };
 
 var Stack = {
+  load: load,
   push: push,
-  load: load
-  // pop: pop,
+  pop: pop
   // clear: clear
 };
 
