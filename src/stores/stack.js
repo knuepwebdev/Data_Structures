@@ -1,11 +1,25 @@
-var stack = [];
+var elements = [];
 
 function push(element) {
-  stack.push(element);
+  elements.push(element);
+};
+
+function load() {
+  return reverseElements();
+};
+
+function reverseElements() {
+  var stack = [];
+  for (var i = elements.length - 1; i >= 0; i--) {
+    stack.push(elements[i]);
+  };
+
+  return stack;
 };
 
 var Stack = {
-  push: push
+  push: push,
+  load: load
   // pop: pop,
   // clear: clear
 };

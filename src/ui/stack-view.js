@@ -27,13 +27,16 @@ var hiAddElement = function(event) {
 
 var saveElement = function(element) {
   Stack.push(element);
-  render(element);
+  var stack = Stack.load();
+  render(stack);
 };
 
-var render = function(element) {
-  var template = require('./list-item');
-  var listItem = template(newElement = element);
-  $listOfElements.append(listItem);
+var render = function(stack) {
+  console.log('render');
+  console.log(stack);
+  // var template = require('./list-item');
+  // var listItem = template(newElement = element);
+  // $listOfElements.append(listItem);
 };
 
 var StackView = {
