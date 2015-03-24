@@ -3,6 +3,7 @@ var Stack = require('../stores/stack');
 var $ = require('jquery');
 var $newElement;
 var $addElementButton;
+var $listOfElements;
 
 var show = function(element) {
   element.html(stackUI);
@@ -32,11 +33,16 @@ var saveElement = function(element) {
 };
 
 var render = function(stack) {
-  console.log('render');
-  console.log(stack);
-  // var template = require('./list-item');
-  // var listItem = template(newElement = element);
-  // $listOfElements.append(listItem);
+  clearList();
+  var template = require('./list-item');
+  stack.forEach(function(element, index, array) {
+    var listItem = template(newElement = element);
+    $listOfElements.append(listItem);
+  });
+};
+
+var clearList = function() {
+  $listOfElements.html('');
 };
 
 var StackView = {
