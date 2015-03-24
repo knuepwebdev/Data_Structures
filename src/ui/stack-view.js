@@ -4,6 +4,7 @@ var $ = require('jquery');
 var $newElement;
 var $addElementButton;
 var $popButton;
+var $clearButton;
 var $listOfElements;
 
 var show = function(element) {
@@ -17,11 +18,13 @@ var bindUI = function() {
   $addElementButton = $('.add-element');
   $listOfElements = $('.list-of-elements');
   $popButton = $('.pop');
+  $clearButton = $('.clear');
 };
 
 var registerHandlers = function() {
   $addElementButton.click(hiAddElement);
   $popButton.click(hiPopElement);
+  $clearButton.click(hiClear);
 };
 
 var hiAddElement = function(event) {
@@ -31,6 +34,11 @@ var hiAddElement = function(event) {
 
 var hiPopElement = function(event) {
   Stack.pop();
+  render(Stack.load());
+};
+
+var hiClear = function(event) {
+  Stack.clear();
   render(Stack.load());
 };
 

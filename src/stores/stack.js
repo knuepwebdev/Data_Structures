@@ -1,5 +1,9 @@
 var elements = [];
 
+function load() {
+  return reverseElements();
+};
+
 function push(element) {
   if (!element) {
     alert('Error. Invalid input');
@@ -8,12 +12,12 @@ function push(element) {
   }
 };
 
-function load() {
-  return reverseElements();
-};
-
 function pop() {
   elements.pop();
+};
+
+function clear() {
+  elements = [];
 };
 
 function reverseElements() {
@@ -28,8 +32,8 @@ function reverseElements() {
 var Stack = {
   load: load,
   push: push,
-  pop: pop
-  // clear: clear
+  pop: pop,
+  clear: clear
 };
 
 module.exports = Stack;
