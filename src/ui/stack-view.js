@@ -37,6 +37,11 @@ var hiPopElement = function(event) {
 var saveElement = function(element) {
   Stack.push(element);
   render(Stack.load());
+  clearInput();
+};
+
+var clearInput = function() {
+  $newElement.val('');
 };
 
 var render = function(stack) {
