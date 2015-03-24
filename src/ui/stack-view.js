@@ -1,8 +1,8 @@
 var stackUI = require('./stack-view-template');
+var Stack = require('../stores/stack');
 var $ = require('jquery');
 var $newElement;
 var $addElementButton;
-var stack = [];
 
 var show = function(element) {
   element.html(stackUI);
@@ -26,7 +26,7 @@ var hiAddElement = function(event) {
 };
 
 var saveElement = function(element) {
-  stack.push(element);
+  Stack.push(element);
   render(element);
 };
 
