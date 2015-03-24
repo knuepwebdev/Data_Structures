@@ -1,7 +1,11 @@
 var elements = [];
 
 function push(element) {
-  elements.push(element);
+  if (!element) {
+    alert('Error. Invalid input');
+  } else {
+    elements.push(element);
+  }
 };
 
 function load() {
