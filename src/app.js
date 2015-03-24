@@ -1,7 +1,7 @@
 var StackView = require('./ui/stack-view');
 
 var initialize = function() {
-  var element = $('body');
+  var element = $('.container');
   StackView.show(element);
 };
 
