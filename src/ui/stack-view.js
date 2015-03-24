@@ -26,14 +26,14 @@ var hiAddElement = function(event) {
 };
 
 var saveElement = function(element) {
-  var template = require('./list-item');
-  var listItem = template(newElement = element);
   stack.push(element);
-  $listOfElements.append(listItem);
+  render(element);
 };
 
-var renderElements = function() {
-
+var render = function(element) {
+  var template = require('./list-item');
+  var listItem = template(newElement = element);
+  $listOfElements.append(listItem);
 };
 
 var StackView = {
