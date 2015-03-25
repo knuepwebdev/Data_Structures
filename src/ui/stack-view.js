@@ -55,7 +55,7 @@ var clearInput = function() {
 
 var render = function(stack) {
   clearList();
-  var template = require('./list-item');
+  var template = require('../templates/list-item-template');
   stack.forEach(function(element, index, array) {
     var listItem = template(newElement = element);
     $listOfElements.append(listItem);
