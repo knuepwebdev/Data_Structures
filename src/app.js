@@ -1,8 +1,11 @@
-var StackView = require('./ui/stack-view');
+var Header = require('./ui/header');
+var MainView = require('./ui/main-view');
 
 var initialize = function() {
-  var element = $('.container');
-  StackView.show(element);
+  var $header = $('.header');
+  var $mainContent = $('.main');
+  Header.show($header);
+  MainView.show($mainContent);
 };
 
 var App = {

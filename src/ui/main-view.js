@@ -1,15 +1,20 @@
-var Stack = require('../stores/stack');
 var $ = require('jquery');
 var $newElement;
 var $addElementButton;
 var $popButton;
 var $clearButton;
 var $listOfElements;
+var dataStructure;
+
+var setStack = function() {
+  var Stack = require('../stores/stack');
+  dataStructure = Stack;
+};
 
 var show = function(element) {
-  var stackUITemplate = require('../templates/stack-view-template');
-  var stackUI = stackUITemplate(dataStructure = 'Stack');
-  element.html(stackUI);
+  var template = require('../templates/ui-template');
+  var uiHTML = template(dataStructureType = 'Stack');
+  element.html(uiHTML);
   bindUI();
   registerHandlers();
 };
@@ -34,18 +39,18 @@ var hiAddElement = function(event) {
 };
 
 var hiPopElement = function(event) {
-  Stack.pop();
-  render(Stack.load());
+  dataStructure.pop();
+  render(dataStructure.load());
 };
 
 var hiClear = function(event) {
-  Stack.clear();
-  render(Stack.load());
+  dataStructure.clear();
+  render(dataStructure.load());
 };
 
 var saveElement = function(element) {
-  Stack.push(element);
-  render(Stack.load());
+  dataStructure.push(element);
+  render(dataStructure.load());
   clearInput();
 };
 
@@ -66,8 +71,9 @@ var clearList = function() {
   $listOfElements.html('');
 };
 
-var StackView = {
-  show: show
+var MainView = {
+  show: show,
+  setStack: setStack
 };
 
-module.exports = StackView;
+module.exports = MainView;

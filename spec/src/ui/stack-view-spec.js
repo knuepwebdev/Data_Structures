@@ -3,7 +3,7 @@ var spies = require('chai-spies');
 chai.use(spies);
 var expect = chai.expect;
 var $ = require('jquery');
-var StackView = require('ui/stack-view');
+var StackView = require('ui/main-view');
 
 var renderStackView = function() {
   $element = $('#spec-dom');
