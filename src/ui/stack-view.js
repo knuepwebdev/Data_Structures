@@ -1,4 +1,3 @@
-var stackUI = require('./stack-view-template');
 var Stack = require('../stores/stack');
 var $ = require('jquery');
 var $newElement;
@@ -8,6 +7,8 @@ var $clearButton;
 var $listOfElements;
 
 var show = function(element) {
+  var stackUITemplate = require('../templates/stack-view-template');
+  var stackUI = stackUITemplate(dataStructure = 'Stack');
   element.html(stackUI);
   bindUI();
   registerHandlers();
