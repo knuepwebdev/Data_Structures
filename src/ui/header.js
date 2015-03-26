@@ -1,4 +1,8 @@
 var MainView = require('./main-view');
+var $stackLink;
+var $queueLink;
+var $stackListItem;
+var $queueListItem;
 
 var show = function(element) {
   var HeaderTemplate = require('../templates/header');
@@ -9,8 +13,10 @@ var show = function(element) {
 };
 
 var bindUI = function() {
-  $stackLink = $('.stack.btn');
-  $queueLink = $('.queue.btn');
+  $stackLink = $('a.stack');
+  $queueLink = $('a.queue');
+  $stackListItem = $('li.stack');
+  $queueListItem = $('li.queue');
 };
 
 var registerHandlers = function() {
@@ -18,11 +24,15 @@ var registerHandlers = function() {
   $queueLink.click(hiSetQueue);
 };
 
-var hiSetStack = function() {
+var hiSetStack = function(event) {
+  $queueListItem.removeClass("active");
+  $stackListItem.addClass("active");
   MainView.setStack();
 };
   
-var hiSetQueue = function() {
+var hiSetQueue = function(event) {
+  $stackListItem.removeClass("active");
+  $queueListItem.addClass("active");
   MainView.setQueue();
 };
 
