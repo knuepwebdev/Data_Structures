@@ -1,19 +1,27 @@
+var Stack = require('../stores/stack');
 var $ = require('jquery');
 var $newElement;
 var $addElementButton;
 var $popButton;
 var $clearButton;
 var $listOfElements;
-var dataStructure;
+var $mainContent;
+var dataStructure = Stack;
 
 var setStack = function() {
-  var Stack = require('../stores/stack');
   dataStructure = Stack;
+  show($mainContent);
 };
 
+var setQueue = function() {
+  var Queue = require('../stores/queue');
+  dataStructure = Queue;
+  show($mainContent);
+};
+  
 var show = function(element) {
   var template = require('../templates/ui-template');
-  var uiHTML = template(dataStructureType = 'Stack');
+  var uiHTML = template(dataStructureType = dataStructure.name());
   element.html(uiHTML);
   bindUI();
   registerHandlers();
@@ -25,6 +33,7 @@ var bindUI = function() {
   $listOfElements = $('.list-of-elements');
   $popButton = $('.pop');
   $clearButton = $('.clear');
+  $mainContent = $('.main');
 };
 
 var registerHandlers = function() {
@@ -73,7 +82,8 @@ var clearList = function() {
 
 var MainView = {
   show: show,
-  setStack: setStack
+  setStack: setStack,
+  setQueue: setQueue
 };
 
 module.exports = MainView;

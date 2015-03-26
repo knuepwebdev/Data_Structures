@@ -1,5 +1,4 @@
 var MainView = require('./main-view');
-// var $main, $stackLink, $queueLink;
 
 var show = function(element) {
   var HeaderTemplate = require('../templates/header');
@@ -10,24 +9,23 @@ var show = function(element) {
 };
 
 var bindUI = function() {
-  // $main = $('.main');
   $stackLink = $('.stack.btn');
   $queueLink = $('.queue.btn');
 };
 
 var registerHandlers = function() {
   $stackLink.click(hiSetStack);
-  // $queueLink.click(hiShowQueue);
+  $queueLink.click(hiSetQueue);
 };
 
 var hiSetStack = function() {
   MainView.setStack();
 };
+  
+var hiSetQueue = function() {
+  MainView.setQueue();
+};
 
-// var hiShowQueue = function() {
-  
-// };
-  
 var Header = {
   show: show
 };

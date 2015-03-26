@@ -29,11 +29,16 @@ function reverseElements() {
   return stack;
 };
 
+function name() {
+  return 'Stack';
+}
+
 var Stack = {
   load: load,
   push: push,
   pop: pop,
-  clear: clear
+  clear: clear,
+  name: name
 };
 
 module.exports = Stack;
