@@ -67,10 +67,10 @@ var clearInput = function() {
   $newElement.val('');
 };
 
-var render = function(stack) {
+var render = function(collection) {
   clearList();
   var template = require('../templates/list-item-template');
-  stack.forEach(function(element, index, array) {
+  collection.forEach(function(element, index, array) {
     var listItem = template(newElement = element);
     $listOfElements.append(listItem);
   });
