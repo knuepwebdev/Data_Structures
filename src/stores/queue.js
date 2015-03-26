@@ -20,11 +20,16 @@ var load = function() {
   return elements;
 };
 
+var clear = function() {
+  elements = [];
+};
+
 var Queue = {
   name: name,
   push: push,
   pop: pop,
-  load: load
+  load: load,
+  clear: clear
 };
 
 module.exports = Queue;

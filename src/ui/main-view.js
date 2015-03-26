@@ -10,12 +10,14 @@ var dataStructure = Stack;
 
 var setStack = function() {
   dataStructure = Stack;
+  dataStructure.clear();
   show($mainContent);
 };
 
 var setQueue = function() {
   var Queue = require('../stores/queue');
   dataStructure = Queue;
+  dataStructure.clear();
   show($mainContent);
 };
   
