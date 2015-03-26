@@ -71,6 +71,10 @@ var clearInput = function() {
 
 var render = function(collection) {
   clearList();
+  list(collection);
+};
+
+var list = function(collection) {
   var template = require('../templates/list-item-template');
   collection.forEach(function(element, index, array) {
     var listItem = template(newElement = element);
