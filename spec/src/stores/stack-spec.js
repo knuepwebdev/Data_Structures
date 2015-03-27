@@ -14,11 +14,8 @@ describe('Stack', function() {
   });
 
   describe('#load()', function() {
-    beforeEach(function() {
-      initializeStack();
-    });
-
     it('returns the elements in the stack in the proper order', function() {
+      initializeStack();
       expect(Stack.load()).to.eql(['3rd', '2nd', '1st']);
     });
   });
@@ -32,13 +29,18 @@ describe('Stack', function() {
   });
 
   describe('#pop()', function() {
-    beforeEach(function() {
-      initializeStack();
-    });    
-
     it('pops an element off the top of the stack', function() {
+      initializeStack();
       Stack.pop();
       expect(Stack.load()).to.eql(['2nd', '1st']);
+    });
+  });
+
+  describe('#clear()', function() {
+    it('clears the stack', function() {
+      initializeStack();
+      Stack.clear();
+      expect(Stack.load()).to.have.length(0);
     });
   });
 });
